@@ -1,63 +1,53 @@
-#Step 1: How to Setup Server (DigitalOcean Droplet with Rocky Linux 10)
+# 01 - Server Setup (Rocky Linux 10 on VirtualBox)
 
-This is a tutorial on how to setup a secure server on Digital Ocean with Rocky Linux 10, and the core packages for additional integration tasks.
---
-## 🚀 1. Create DigitalOcean Droplet
+**Goal:** Provision a secure Rocky Linux 10 VM for the internship tasks and install core packages that we will need later (web server, database, PHP, Python tools).  
+**Environment used:** VirtualBox VM (Rocky Linux 10, 4GB RAM, 40GB disk, 2 vCPUs).
 
-1. Log in to DigitalOcean.
+---
 
-2.Click on Droplets → Create Droplet.
+## 1. Summary of what I did (Day 1)
+- Installed Rocky Linux 10 on VirtualBox.
+- Created a non-root sudo user.  
+- Disabled root SSH login.  
+- Enabled and configured `firewalld`.  
+- Installed core packages: Apache (httpd), MariaDB, PHP, Python, developer tools.
+- Performed system update and basic verification.
 
-3.Select the following configuration:
+---
 
--Image: Rocky Linux 10 (x64)
+## 2. Why these steps matter (short explanations)
+- **Non-root user & disable root login:** improves security — attackers shouldn't be able to log in directly as `root`.  
+- **firewalld + allow ports:** ensures only required services (SSH / HTTP / HTTPS / Keycloak port 8080) are reachable.  
+- **dnf update / package installation:** keeps OS secure and installs the software the apps will need (web server, database, language runtimes).  
+- **Enabling services:** makes services persistent after reboot (so the server remains functional).
 
--Plan: Simplest (lowest-priced is fine, such as $5/month)
+---
 
--Location: Nearest you (eg Bangalore / Singapore)
+## 3. Commands executed (run one by one; explanations after each block)
 
--Authentication: Add SSH Key (preferred) or provide root password.
+### 3.1 Update package metadata & upgrade
+```bash
+sudo dnf clean all
+sudo dnf makecache
+sudo dnf update -y
+# create user
+sudo adduser projectuser
+# set password (enter a secure password when prompted)
+sudo passwd projectuser
+# add to wheel group for sudo access
+sudo usermod -aG wheel projectuser
+sudo systemctl enable --now firewalld
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --permanent --add-port=8080/tcp   # Keycloak (dev/default)
+sudo firewall-cmd --reload
+# verify
+sudo firewall-cmd --list-all
+sudo dnf install -y epel-release
+# install Remi repo for newer PHP if needed
+sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-10.rpm
+sudo dnf module enable -y php:remi-8.3
 
-Click Create Droplet.
-
-5.After the server is provisioned, record its IP address.
---
-## 🔑 2. Secure Server Access
-
-1.Access your server through SSH:
- ```bash
-ssh root@your_server_ip
-dnf update -y
-adduser intern
-passwd intern
-usermod -aG wheel intern
-firewall-cmd --permanent --add-service=ssh
-firewall-cmd --permanent --add-service=http
-firewall-cmd --permanent --add-service=https
-firewall-cmd --reload
-nano /etc/ssh/sshd_config
-systemctl restart sshd
-# Apache Web Server
-dnf install httpd -y
-systemctl enable httpd
-systemctl start httpd
-
-# MariaDB Database
-dnf install mariadb-server -y
-systemctl enable mariadb
-systemctl start mariadb
-mysql_secure_installation
-
-# PHP 8.2
-dnf module reset php -y
-dnf module enable php:8.2 -y
-dnf install php php-cli php-mysqlnd php-xml php-gd php-mbstring -y
-systemctl restart httpd
-
-# Python 3.11
-dnf install python3.11 python3.11-pip -y
-httpd -v        # Apache version
-mysql -V        # MariaDB version
-php -v          # PHP version
-python3.11 -V   # Python version
-
+# install main packages
+sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm mariadb-server python3 python3-pip git wget unzip composer
