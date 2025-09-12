@@ -23,11 +23,11 @@
 
 ---
 ## screenshots
-![updatepage](screenshots'/update.png)
-![newuser](screenshots'/newuser.png)
-![firewallsetup](screenshots'/firewallsetup.png)
-![corepackage](screenshots'/installedcorepackages.png)
-![corepackages2](screenshots'/installedcorepackages2.png)
+[updatepage](screenshots'/update.png)
+[newuser](screenshots'/newuser.png)
+[firewallsetup](screenshots'/firewallsetup.png)
+[corepackage](screenshots'/installedcorepackages.png)
+[corepackages2](screenshots'/installedcorepackages2.png)
 
 
 
