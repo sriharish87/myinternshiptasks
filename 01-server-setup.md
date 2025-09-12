@@ -22,6 +22,14 @@
 - **Enabling services:** makes services persistent after reboot (so the server remains functional).
 
 ---
+## screenshots
+![updatepage](update.png)
+![newuser](newuser.png)
+![firewallsetup](firewallsetup.png)
+![corepackage](installedcorepackages.png)
+![corepackages2](installedcorepackages2.png)
+
+
 
 ## 3. Commands executed (run one by one; explanations after each block)
 
@@ -52,7 +60,6 @@ sudo dnf module enable -y php:remi-8.3
 # install main packages
 sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm mariadb-server python3 python3-pip git wget unzip composer
 
-![VM running Rocky Linux](screenshots/day1-vm.png)
 
 
 
