@@ -10,11 +10,11 @@ Verified terminal access.
 
 📸 Screenshots:
 
-screenshots/day1-vm-creation.png
-
-screenshots/day1-update.png
-
-screenshots/day1-corepkgs.png
+[updatepage](screenshots'/update.png)
+[newuser](screenshots'/newuser.png)
+[firewallsetup](screenshots'/firewallsetup.png)
+[corepackage](screenshots'/installedcorepackages.png)
+[corepackages2](screenshots'/installedcorepackages2.png)
 
 📌 Day 2 – Keycloak Setup
 
