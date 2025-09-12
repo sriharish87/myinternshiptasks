@@ -51,3 +51,10 @@ sudo dnf module enable -y php:remi-8.3
 
 # install main packages
 sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm mariadb-server python3 python3-pip git wget unzip composer
+
+![VM running Rocky Linux](screenshots/day1-vm.png)
+
+
+
+
+
