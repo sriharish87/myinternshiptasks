@@ -147,9 +147,10 @@ sudo systemctl enable --now mariadb
 
 **Why:** Makes services start now and on boot.
 
-**Screenshot #4:** `screenshots/day2-services.png`
-*(Show `systemctl status httpd` and `systemctl status mariadb` — combined or separate)*
-
+**Screenshot #4:** 
+[Enable&StartServices1](screenshots'/2day5.png)  
+[Enable&StartServices2](screenshots'/2day6.png)  
+[Enable&StartServices3](screenshots'/2day7.png)  
 ---
 
 ## 5) Quick Verification of Runtime Versions
