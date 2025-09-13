@@ -117,9 +117,9 @@ sudo dnf module enable -y php:remi-8.3
 
 **Why:** Remi provides up-to-date PHP builds used by Drupal/PHP apps.
 
-**Screenshot #2:** `screenshots/day2-repos.png`
-*(Show dnf repolist output or successful install messages)*
-
+**Screenshot #2:
+[epelremi](screenshots'/2day3.png)
+[epelremi1](screenshots'/2day4.png)
 ---
 
 ## 3) Install Apache, PHP, PHP-FPM, MariaDB, Python, Composer, and Tools
