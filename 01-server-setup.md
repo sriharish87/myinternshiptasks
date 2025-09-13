@@ -86,7 +86,7 @@ df -h /
 **Why:** Confirms network, disk, memory — useful evidence for docs.
 
 **Screenshot #1:** 
-[for_verifyVM](screenshots'/ScreenshotFrom2025-09-1200-06-03.png)
+[for_verifyVM](Screenshot From 2025-09-12 00-06-42.png)
 [for_verifyVM2](screenshots'/ScreenshotFrom2025-09-1200-06-42.png)
 
 ---
