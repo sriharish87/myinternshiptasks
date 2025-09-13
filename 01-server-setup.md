@@ -131,9 +131,10 @@ mariadb-server python3 python3-pip composer unzip wget git
 
 **Why:** Installs runtime stacks for Drupal (PHP), Django (Python), and MariaDB.
 
-**Screenshot #3:** `screenshots/day2-install-core.png`
-*(Capture terminal at the end showing install completed)*
-
+**Screenshot #3:** 
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools1](screenshots'/2day8.png)
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools2](screenshots'/2day9.png)
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools3](screenshots'/2day10.png)
 ---
 
 ## 4) Enable & Start Services
