@@ -60,6 +60,158 @@ sudo dnf module enable -y php:remi-8.3
 # install main packages
 sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm mariadb-server python3 python3-pip git wget unzip composer
 
+'''markdown
+# Day 2 – Server Setup
+
+## Before You Start
+
+Confirm the Day 1 state.
+
+---
+
+## 0) Verify VM & Internet
+
+Run:
+
+```bash
+hostnamectl
+ip addr show
+ping -c 4 8.8.8.8
+ping -c 4 google.com
+free -h
+df -h /
+```
+
+**Why:** Confirms network, disk, memory — useful evidence for docs.
+
+**Screenshot #1:** `screenshots/day2-system-info.png`
+*(Capture hostnamectl, ip addr, free -h, df -h / on one screen or a couple images)*
+
+---
+
+## 1) Ensure package repos & clean cache
+
+Run:
+
+```bash
+sudo dnf clean all
+sudo rm -rf /var/cache/dnf
+sudo dnf makecache
+```
+
+**Why:** Guarantees fresh metadata (fixes stale/mirror problems).
+
+*No screenshot required unless errors occur.*
+
+---
+
+## 2) Add EPEL & Remi repos
+
+```bash
+sudo dnf install -y epel-release
+sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-10.rpm
+sudo dnf module enable -y php:remi-8.3
+```
+
+**Why:** Remi provides up-to-date PHP builds used by Drupal/PHP apps.
+
+**Screenshot #2:** `screenshots/day2-repos.png`
+*(Show dnf repolist output or successful install messages)*
+
+---
+
+## 3) Install Apache, PHP, PHP-FPM, MariaDB, Python, Composer, and Tools
+
+```bash
+sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm \
+mariadb-server python3 python3-pip composer unzip wget git
+```
+
+**Why:** Installs runtime stacks for Drupal (PHP), Django (Python), and MariaDB.
+
+**Screenshot #3:** `screenshots/day2-install-core.png`
+*(Capture terminal at the end showing install completed)*
+
+---
+
+## 4) Enable & Start Services
+
+```bash
+sudo systemctl enable --now httpd
+sudo systemctl enable --now php-fpm
+sudo systemctl enable --now mariadb
+```
+
+**Why:** Makes services start now and on boot.
+
+**Screenshot #4:** `screenshots/day2-services.png`
+*(Show `systemctl status httpd` and `systemctl status mariadb` — combined or separate)*
+
+---
+
+## 5) Quick Verification of Runtime Versions
+
+```bash
+httpd -v
+php -v
+mysql -V
+python3 -V
+composer -V
+```
+
+**Why:** Proves exact versions installed.
+
+**Screenshot #5:** `screenshots/day2-versions.png`
+*(One image showing outputs or separate files named accordingly)*
+
+---
+
+## 6) Secure MariaDB
+
+```bash
+sudo mysql_secure_installation
+```
+
+Follow prompts:
+
+* Set root password (if not set during install)
+* Remove anonymous users
+* Disallow remote root login
+* Remove test DB
+* Reload privilege tables: yes
+
+**Why:** Basic hardening of the database.
+
+**Screenshot #6:** `screenshots/day2-mysql-secure.png`
+*(Screenshot of the final success message; blur any passwords)*
+
+---
+
+## 7) Test Apache Default Page
+
+From VM or host (if networking/NAT configured):
+
+```bash
+curl -I http://localhost
+# or
+curl http://127.0.0.1 | head -n 5
+```
+
+You should get HTTP 200 or the default Apache page.
+
+**Screenshot #7:** `screenshots/day2-apache-test.png`
+*(Capture curl output or open VM browser showing Apache default page)*
+
+---
+
+## Notes
+
+* Optional swap creation and database creation were **skipped**.
+* SELinux adjustments were **not needed** this session.
+
+---
+
+## End of Day 2
 
 
 
