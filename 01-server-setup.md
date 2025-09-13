@@ -86,8 +86,8 @@ df -h /
 **Why:** Confirms network, disk, memory — useful evidence for docs.
 
 **Screenshot #1:** 
-[for_verifyVM](screenshots'/2day1.png)
-[for_verifyVM2](screenshots'/2day2.png)
+[for_verifyVM](screenshots'/2day1.png)  
+[for_verifyVM2](screenshots'/2day2.png)  
 
 ---
 
@@ -118,8 +118,8 @@ sudo dnf module enable -y php:remi-8.3
 **Why:** Remi provides up-to-date PHP builds used by Drupal/PHP apps.
 
 **Screenshot #2:
-[epelremi](screenshots'/2day3.png)
-[epelremi1](screenshots'/2day4.png)
+[epelremi](screenshots'/2day3.png)  
+[epelremi1](screenshots'/2day4.png)  
 ---
 
 ## 3) Install Apache, PHP, PHP-FPM, MariaDB, Python, Composer, and Tools
@@ -132,9 +132,9 @@ mariadb-server python3 python3-pip composer unzip wget git
 **Why:** Installs runtime stacks for Drupal (PHP), Django (Python), and MariaDB.
 
 **Screenshot #3:** 
-[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools1](screenshots'/2day8.png)
-[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools2](screenshots'/2day9.png)
-[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools3](screenshots'/2day10.png)
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools1](screenshots'/2day8.png)  
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools2](screenshots'/2day9.png)   
+[InstallApache,PHP,PHP-FPM,MariaDB,Python,Composer,andTools3](screenshots'/2day10.png)  
 ---
 
 ## 4) Enable & Start Services
@@ -165,8 +165,8 @@ composer -V
 
 **Why:** Proves exact versions installed.
 
-**Screenshot #5:** `screenshots/day2-versions.png`
-*(One image showing outputs or separate files named accordingly)*
+**Screenshot #5:** 
+[Quick_Verification](screenshots'/2day11.png)  
 
 ---
 
@@ -186,8 +186,7 @@ Follow prompts:
 
 **Why:** Basic hardening of the database.
 
-**Screenshot #6:** `screenshots/day2-mysql-secure.png`
-*(Screenshot of the final success message; blur any passwords)*
+**Screenshot #6:** [secure_Mariadb](screenshots'/2day12.png)  
 
 ---
 
@@ -203,8 +202,8 @@ curl http://127.0.0.1 | head -n 5
 
 You should get HTTP 200 or the default Apache page.
 
-**Screenshot #7:** `screenshots/day2-apache-test.png`
-*(Capture curl output or open VM browser showing Apache default page)*
+**Screenshot #7:**
+[Test_Apache_Default_Page](screenshots'/2day13.png)  
 
 ---
 
