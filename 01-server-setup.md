@@ -85,8 +85,8 @@ df -h /
 
 **Why:** Confirms network, disk, memory — useful evidence for docs.
 
-**Screenshot #1:** `screenshots/day2-system-info.png`
-*(Capture hostnamectl, ip addr, free -h, df -h / on one screen or a couple images)*
+**Screenshot #1:** 
+[for_verifyVM]()
 
 ---
 
