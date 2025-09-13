@@ -60,12 +60,13 @@ sudo dnf module enable -y php:remi-8.3
 # install main packages
 sudo dnf install -y httpd php php-cli php-mysqlnd php-gd php-xml php-mbstring php-json php-fpm mariadb-server python3 python3-pip git wget unzip composer
 
-'''markdown
-# Day 2 – Server Setup
+---
 
-## Before You Start
+### 2️⃣ Start Day 2 text normally
+Then, write your Day 2 letter-style text **without any backticks**:
 
-Confirm the Day 1 state.
+```markdown
+## Day 2 – Server Setup
 
 ---
 
