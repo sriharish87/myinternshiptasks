@@ -20,3 +20,16 @@ ExecStart=/var/www/django_project/venv/bin/gunicorn --access-logfile - --workers
 
 [Install]
 WantedBy=multi-user.target
+[Unit]
+Description=Gunicorn daemon for Django project
+After=network.target
+
+[Service]
+User=sriharish
+Group=apache
+WorkingDirectory=/var/www/django_project
+ExecStart=/var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 mysite.wsgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
