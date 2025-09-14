@@ -8,3 +8,15 @@ sudo find /var/www/drupal -type d -exec chmod 755 {} \;
 sudo find /var/www/drupal -type f -exec chmod 644 {} \;
 sudo chmod 775 /var/www/drupal/sites/default/files
 sudo chmod 644 /var/www/drupal/sites/default/settings.php
+[Unit]
+Description=Gunicorn daemon for Django project
+After=network.target
+
+[Service]
+User=your_username
+Group=your_username
+WorkingDirectory=/var/www/django_project
+ExecStart=/var/www/django_project/venv/bin/gunicorn --access-logfile - --workers 3 --bind 127.0.0.1:8000 mysite.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
