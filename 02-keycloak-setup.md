@@ -48,6 +48,7 @@ cpp
 Copy code
 http://<VM_IP>:8080
 Login with the admin credentials.
+---
 
 Screenshots
 Keycloak dev mode running:
