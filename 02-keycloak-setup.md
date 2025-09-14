@@ -1,43 +1,59 @@
-# Keycloak Setup (Day 3)
+# 02 – Keycloak Setup
 
-This script documents the steps to install and configure Keycloak on Rocky Linux.
+This document explains the installation and configuration of **Keycloak** on the Rocky Linux VM.
 
-# Step 1 – Install Java 17
+---
+
+## Installation Steps
+
+### 1. Install Java 17
+```bash
 sudo dnf install -y java-17-openjdk
 java -version
-
-# Step 2 – Download and Extract Keycloak
+2. Download and Extract Keycloak
+bash
+Copy code
 cd /opt
 sudo curl -L -O https://github.com/keycloak/keycloak/releases/download/24.0.4/keycloak-24.0.4.zip
 sudo dnf install -y unzip
 sudo unzip keycloak-24.0.4.zip
 sudo mv keycloak-24.0.4 keycloak
-
-# Step 3 – Create Keycloak User
+3. Create Keycloak User
+bash
+Copy code
 sudo useradd -r -s /sbin/nologin keycloak
 sudo chown -R keycloak:keycloak /opt/keycloak
-
-# Step 4 – Start Keycloak (Dev Mode)
+4. Start Keycloak in Development Mode
+bash
+Copy code
 sudo -u keycloak /opt/keycloak/bin/kc.sh start-dev --http-port=8080 --hostname=0.0.0.0
-# ⚠️ Dev mode is for testing only. Production requires HTTPS and certificates.
+⚠️ Dev mode is used for testing only. Production requires HTTPS certificates.
 
-# Step 5 – Open Firewall Port
+5. Open Firewall Port
+bash
+Copy code
 sudo firewall-cmd --permanent --add-port=8080/tcp
 sudo firewall-cmd --reload
+6. Create Admin User
+When prompted:
 
-# Step 6 – Create Admin User
-# When prompted:
-# Username: admin
-# Password: ********
+makefile
+Copy code
+Username: admin
+Password: ********
+7. Access Admin Console
+In browser:
 
-# Step 7 – Access Admin Console
-# Open your browser at:
-# http://<VM_IP>:8080
-# Login with the admin credentials.
+cpp
+Copy code
+http://<VM_IP>:8080
+Login with the admin credentials.
 
-# Screenshots (to replace later with real ones)
-# ![Keycloak start](screenshots/keycloak-start.png)
-# ![Keycloak login](screenshots/keycloak-login.png)
-# ![Keycloak dashboard](screenshots/keycloak-dashboard.png)
+Screenshots
+Keycloak dev mode running:
+
+Login page:
+
+Admin Console dashboard:
 
 
