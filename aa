@@ -1,21 +1,10 @@
 
 
-# Go to your Drupal folder
-cd /var/www/drupal
-
-# Make sure sites/default exists
-sudo mkdir -p sites/default/files
-
-# Download the missing default.settings.php if not present
-if [ ! -f sites/default/default.settings.php ]; then
-  sudo wget -O sites/default/default.settings.php https://raw.githubusercontent.com/drupal/drupal/11.x/sites/default/default.settings.php
-fi
-
-# Copy to settings.php
-sudo cp sites/default/default.settings.php sites/default/settings.php
-
-# Fix ownership (apache is your webserver user in Rocky Linux/CentOS)
-sudo chown -R apache:apache sites/default
-sudo chmod -R 755 sites/default
-sudo chmod 664 sites/default/settings.php
-sudo chmod -R 775 sites/default/files
+ps aux | grep httpd
+csudo chcon -R -t httpd_sys_rw_content_t /var/www/drupal/sites/default/files
+sudo chcon -t httpd_sys_rw_content_t /var/www/drupal/sites/default/settings.php
+sudo chown -R apache:apache /var/www/drupal
+sudo find /var/www/drupal -type d -exec chmod 755 {} \;
+sudo find /var/www/drupal -type f -exec chmod 644 {} \;
+sudo chmod 775 /var/www/drupal/sites/default/files
+sudo chmod 644 /var/www/drupal/sites/default/settings.php
