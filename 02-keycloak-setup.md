@@ -57,6 +57,6 @@ Login with the admin credentials.
 ```
 
 Screenshots
-[screenshot1](screeenshot'/3day1.png)
+[screenshot1](screenshots'/3day1.png)
 
 
