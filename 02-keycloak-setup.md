@@ -57,10 +57,6 @@ Login with the admin credentials.
 ```
 
 Screenshots
-Keycloak dev mode running:
-
-Login page:
-
-Admin Console dashboard:
+[screenshot1](screeenshot'/3day1.png)
 
 
