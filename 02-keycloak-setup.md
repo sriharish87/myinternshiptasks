@@ -59,7 +59,7 @@ Login with the admin credentials.
 Screenshots  
 [screenshot1](screenshots'/3day1.png)  
 [screenshot2](screenshots'/3day2.png)  
-[screenshot3](screenshots'/3day3.png) 
+[screenshot3](screenshots'/3day3.png)  
 [screenshot4](screenshots'/3day4.png)  
 [screenshot5](screenshots'/3day5.png)  
 [screenshot6](screenshots'/3day6.png)  
