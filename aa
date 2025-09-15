@@ -1,4 +1,4 @@
-
+// this for my reference 
 
 ps aux | grep httpd
 csudo chcon -R -t httpd_sys_rw_content_t /var/www/drupal/sites/default/files
