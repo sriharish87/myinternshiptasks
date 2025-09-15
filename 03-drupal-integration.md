@@ -16,22 +16,23 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 2. Install Drupal
+ ```
 cd /var/www
 composer create-project drupal/recommended-project drupal
 sudo chown -R apache:apache drupal
-
+```
 
 ⚠️ If composer warns “Do not run composer as root”, type y to continue.
 
 3. Configure Apache Virtual Host
 
 Create file:
-
+```
 sudo nano /etc/httpd/conf.d/drupal.conf
-
+```
 
 Paste:
-
+```
 <VirtualHost *:80>
     ServerName your_django_domain_or_ip
     DocumentRoot /var/www/drupal/web
@@ -45,11 +46,11 @@ Paste:
     CustomLog /var/log/httpd/drupal_access.log combined
 </VirtualHost>
 
-
+```
 Enable and restart Apache:
-
+```
 sudo systemctl restart httpd
-
+```
 4. Run Drupal Installer
 
 Open browser:
@@ -70,15 +71,15 @@ Password: StrongPass123!
 5. Install Keycloak module
 
 Inside project:
-
+```
 cd /var/www/drupal
 composer require drupal/keycloak
-
+```
 
 Enable module:
-
+```
 drush en keycloak -y
-
+```
 6. Create Keycloak client for Drupal
 
 Go to Keycloak Admin Console
