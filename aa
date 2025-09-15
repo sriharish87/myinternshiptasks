@@ -26,10 +26,15 @@ After=network.target
 
 [Service]
 User=sriharish
-Group=apache
+Group=sriharish
 WorkingDirectory=/var/www/django_project
-ExecStart=/var/www/django_project/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 mysite.wsgi:application
+ExecStart=/var/www/django_project/venv/bin/gunicorn \
+    --workers 3 \
+    --bind 127.0.0.1:8000 \
+    mysite.wsgi:application
+
 Restart=always
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
