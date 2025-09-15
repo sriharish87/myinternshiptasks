@@ -146,6 +146,10 @@ Click Login → you should be redirected to Keycloak
 
 After login, you are redirected back to Django as authenticated user
 
-7. Screenshot requirements
-   [screenshot1](screenshots'/5day1.png)
-
+7. Screenshot requirements  
+   [screenshot1](screenshots'/5day1.png)  
+   [screenshot2](screenshots'/5day2.png)  
+   [screenshot3](screenshots'/5day3.png)
+   [screenshot4](screenshots'/5day4.png)
+   [screenshot5](screenshots'/5day5.png)
+   [screenshot6](screenshots'/5day6.png)  
