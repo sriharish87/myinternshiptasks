@@ -77,5 +77,6 @@ Expected: Redirect to Keycloak login → redirect back to profile.php
 
 ⚠ Note
 Despite following all steps, I was unable to connect with Keycloak. I tried different approaches, but the PHP app could not successfully authenticate. This issue may require further debugging or Keycloak client configuration review
-screenshots 
-
+screenshots  
+[screenshot1](screenshots'/6day1.png)  
+[screenshot2](screenshots'/6day2.png)  
