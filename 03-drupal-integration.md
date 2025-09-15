@@ -124,4 +124,4 @@ Enter Keycloak credentials
 
 You should be redirected back and logged into Drupal
 screenshots 
-[screenshot1](screeenshots'/4day1.png)
+[screenshot1](screenshots'/4day1.png)
