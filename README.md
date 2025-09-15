@@ -56,6 +56,8 @@ I used **VirtualBox** with Rocky Linux 10 for this project (instead of DigitalOc
 This repository includes a GitHub Actions workflow (`.github/workflows/daily-commit.yml`) that creates an automated empty commit once per day. This ensures activity tracking for internship evaluation.  
 
 ---
+## ip address
+All applications (Drupal, Django, and PHP) are accessible on the VM at IP address 10.0.2.15. Use this IP in your browser or Keycloak client redirect URIs.
 
 ## 👨‍💻 Author
 **Sri Harish**  
