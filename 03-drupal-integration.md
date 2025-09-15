@@ -122,6 +122,10 @@ Click Login with Keycloak
 
 Enter Keycloak credentials
 
-You should be redirected back and logged into Drupal
-screenshots 
-[screenshot1](screenshots'/4day1.png)
+You should be redirected back and logged into Drupal  
+screenshots  
+[screenshot1](screenshots'/4day1.png)  
+[screenshot2](screenshots'/4day2.png)  
+[screenshot3](screenshots'/4day3.png)  
+[screenshot4](screenshots'/4day4.png)  
+[screenshot5](screenshots'/4day5.png)  
