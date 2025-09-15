@@ -89,9 +89,9 @@ Clients → Create:
 Client ID: drupal
 
 Valid Redirect URIs:
-
+```
 http://<your_server_ip>/keycloak/oauth2/callback
-
+```
 
 Copy the Client Secret
 
@@ -108,9 +108,9 @@ Client ID: drupal
 Client Secret: paste from Keycloak
 
 Redirect URI:
-
+```
 http://<your_server_ip>/keycloak/oauth2/callback
-
+```
 
 Save config.
 
